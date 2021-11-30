@@ -1,4 +1,5 @@
 const shopProduct = document.querySelectorAll('.shopProduct');
+const images = document.querySelector('.images');
 const allA = document.querySelectorAll('.category');
 const fabrics = document.querySelectorAll(".fabric");
 const aPrice = document.querySelectorAll('.input.price');
@@ -222,3 +223,16 @@ input.addEventListener('input', searchTask)
 //   });
 //   field.append(...sortNames)
 //   }
+function renderProdcuts() {
+  products.forEach((product) => {
+    images.innerHTML +=`
+<div data-price="" class="image shopProduct ${product.category.join(' ')} ${product.fabric.join(' ')} ${product.bulb}" > <img class="" src=" ${product.image}" alt="${product.title}"/>
+<a href="/shop/${product.id}">
+<h3 class="subtitle">${product.title} <br>${product.model}</h3>
+<h5 >${product.price.toFixed(2)} zł</h5>
+ <input class="addCart" type="button" value="Szczegóły..."/>
+ </a>
+</div>`;
+});
+}
+renderProdcuts();
