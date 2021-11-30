@@ -1,0 +1,254 @@
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+section.allProductInfo {
+    display: grid;
+    grid-gap: 20px;
+    margin-top: 7vh;
+}
+
+.info {
+    box-shadow: var(--shadow);
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 3rem;
+    max-width: 1400px;
+}
+
+.infoImg {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+h5.subtitle {
+    font-size: 30px;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.productInfo p:nth-child(2),
+.productInfo p:nth-child(3) {
+    text-align: center;
+    margin-bottom: 40px;
+
+}
+
+.productInfo p:nth-child(2) {
+    text-transform: uppercase;
+    opacity: 0.7;
+
+}
+
+.productInfo p:nth-child(4) {
+    text-align: justify;
+    line-height: 40px;
+
+}
+
+.productInfo table {
+    min-width: 70%;
+    line-height: 30px;
+}
+
+.productInfo table tbody tr th {
+    padding-right: 30px;
+}
+
+.buttonAddCart {
+    margin-top: 70px;
+    min-width: 40%;
+
+}
+
+.buttonAddCart button {
+    float: left;
+    margin-right: 15px;
+}
+
+.buttonAddCart i {
+    padding-left: 5px;
+}
+
+.buttonAddCart button:hover {
+    background-color: gray;
+}
+
+/* family products */
+
+section.allProductInfo article {
+    display: grid;
+    grid-gap: 20px;
+    margin-top: 7vh;
+    display: flex;
+    flex-direction: column;
+
+}
+
+section.allProductInfo article h4 {
+    flex-basis: 10vh;
+    text-align: center;
+    line-height: 10vh;
+    border-bottom: 1px solid var(--gray);
+}
+
+.imagesDiv {
+    width: 100%;
+    flex-grow: 1;
+    /* kontener flex */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+.imageDiv.image.shopProduct {
+    flex-basis: 21%;
+}
+
+.image.shopProduct.imageDiv img {
+    max-width: 100%;
+    min-height: 180px;
+}
+
+.shopProduct form {
+    flex-grow: 1;
+    /* kontener */
+    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: stretch;
+
+}
+
+
+.shopProduct button i {
+    margin-left: 5px;
+}
+
+.shopProduct button:hover {
+    border-bottom: 4px solid rgba(0, 0, 0, .4);
+}
+
+@media (max-width: 1200px) {
+    .productInfo p:nth-child(4) {
+        line-height: 30px;
+
+    }
+
+}
+
+@media (max-width: 1000px) {
+    h5.subtitle {
+        font-size: 25px;
+    }
+
+    .productInfo p:nth-child(2),
+    .productInfo p:nth-child(3),
+    .productInfo p:nth-child(4),
+    .productInfo table {
+        font-size: 12px;
+    }
+
+    .buttonAddCart button {
+        font-size: 14px;
+
+    }
+
+}
+
+@media (max-width: 720px) {
+    h5.subtitle {
+        font-size: 19px;
+    }
+
+    .productInfo p:nth-child(2),
+    .productInfo p:nth-child(3),
+    .productInfo p:nth-child(4),
+    .productInfo table {
+        font-size: 10px;
+    }
+
+    .buttonAddCart button {
+        font-size: 12px;
+        margin-left: 16px;
+        margin-right: 0;
+    }
+
+
+}
+
+@media (max-width: 650px) {
+    .info {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 1.5rem;
+    }
+
+    .infoImg {
+        margin: 0 auto;
+
+    }
+
+    h5.subtitle {
+        font-size: 20px;
+    }
+
+    .productInfo p:nth-child(2),
+    .productInfo p:nth-child(3),
+    .productInfo p:nth-child(4),
+    .productInfo table,
+
+    .button.addCart {
+        font-size: 14px;
+    }
+
+    .productInfo table,
+    .buttonAddCart {
+        margin: 0 auto;
+    }
+
+    .buttonAddCart {
+        width: 250px;
+        margin: 0 auto;
+    }
+
+    .buttonAddCart button {
+        font-size: 13px;
+    }
+
+}
+
+@media (orientation: portrait) and (min-width: 275px) {
+    .productInfo table {
+        font-size: 12px;
+    }
+}
+
+@media (orientation: landscape) and (max-width: 830px) {
+    section.allProductInfo {
+        margin-top: 50px;
+    }
+
+    .infoImg {
+        max-width: 70%;
+        max-height: 63%;
+    }
+
+    h5.subtitle {
+        font-size: 19px;
+    }
+}
+
+@media (orientation: landscape) and (max-width: 650px) {
+
+    .info {
+        padding: 0 1.5rem 1.5rem;
+    }
+
+
+}

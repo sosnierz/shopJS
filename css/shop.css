@@ -1,0 +1,351 @@
+.shop {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas:
+        'shopFiltres shopBanner shopBanner'
+        'shopFiltres  allShop allShop';
+    max-width: 1920px;
+    margin-top: 7vh;
+}
+
+/* Filtres */
+.shopFiltres {
+    grid-area: shopFiltres;
+    max-width: 400px;
+    font-size: 0.7rem;
+}
+
+.shopFiltres h3 {
+    border-bottom: thick double black;
+    font-size: 25px;
+}
+
+.shopFiltres h4 {
+    font-size: 19px;
+}
+
+.burgers {
+    position: absolute;
+    top: 7%;
+    left: 10px;
+    font-size: 40px;
+    line-height: 50px;
+    transition: .3s linear;
+    display: none;
+}
+
+.burgers:hover {
+    cursor: pointer;
+}
+
+.burgers.fas {
+    display: none;
+
+}
+
+
+
+/* Main shop - banner */
+.shopBanner {
+    grid-area: shopBanner;
+    width: 100%;
+    min-height: 300px;
+    background: url(/images/layout/logo.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.field h1 {
+    top: 0%;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, .4);
+    width: 100%;
+    text-align: center;
+    padding: 8px 10px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+div.input-group {
+    position: absolute;
+    width: 60%;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-transform: uppercase;
+    border: 2px solid orangered;
+    transition: 0.3s;
+}
+
+div.mb-3 {
+    margin-bottom: 0 !important;
+}
+
+button.btn {
+    height: 80%;
+    color: white;
+    background-color: rgba(0, 0, 0, .4);
+    font-size: 1.2rem;
+}
+
+button.btn i {
+    margin-right: 0;
+}
+
+/* nav sort */
+.shopMenu {
+    position: relative;
+}
+
+.nav-item.sort,
+.nav-item.scroll,
+.nav-item.basket {
+    position: absolute;
+    font-size: 10px;
+}
+
+.nav-item.sort {
+    top: 0;
+    left: 1%;
+}
+
+.nav-item.scroll {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+
+.page-item a,
+.nav-item.basket a {
+    color: black;
+
+}
+
+.page-item a {
+    font-size: 10px;
+}
+
+.nav-item.basket {
+    top: 0;
+    right: 1%;
+    font-size: 13px;
+}
+
+.basket a span {
+    margin-left: 8px;
+}
+
+.basket a:hover {
+    color: gray;
+}
+
+.allShop {
+    grid-area: allShop;
+
+}
+
+.images {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.image.shopProduct {
+    max-height: 300px;
+    display: flex;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    flex-direction: column;
+    align-items: stretch;
+    background: white;
+    border-radius: 0% 0% 0% 0% / 0% 0% 0% 0%;
+    box-shadow: 20px 20px rgba(0, 0, 0, .15);
+    transition: all .4s ease;
+}
+
+.image.shopProduct img {
+    object-fit: contain;
+    width: 100%;
+    min-height: 50%;
+    max-height: 130px;
+    margin-top: 10px;
+    align-self: center;
+    border-radius: 0;
+}
+
+.image.shopProduct h3,
+.image.shopProduct h5 {
+    text-align: center;
+    font-size: 0.8em;
+    margin: 10px 0;
+
+}
+
+.shopProduct a {
+    text-decoration: none;
+    color: black;
+}
+
+
+
+.shopProduct input {
+
+    width: 100%;
+    background-color: white;
+    border: 2px solid rgba(63, 53, 53, 0.65);
+    border-radius: 5%;
+    box-shadow: 2px 2px var(--gray), 0.5em 0 .4em var(--grey);
+}
+
+.shopProduct input:hover {
+    border-bottom: 4px solid rgba(0, 0, 0, .4);
+}
+
+
+
+@media (max-width: 1090px) {
+    .navbar ul.social li {
+        font-size: 12px;
+    }
+
+    .shopFiltres h3 {
+        border-bottom: thick double black;
+        font-size: 20px;
+    }
+
+    .shopFiltres h4 {
+        font-size: 15px;
+    }
+
+    .shopFiltres label {
+        font-size: 9px;
+    }
+}
+
+
+@media (max-width: 970px) {
+    .shopFiltres {
+        position: absolute;
+        top: 12%;
+        left: -300px;
+        width: 200px;
+        background-color: rgb(114, 109, 109);
+        transition: .3s linear;
+        color: white;
+        z-index: 1;
+    }
+
+    .shopFiltres div {
+        margin-left: 10px;
+    }
+
+    .shopFiltres h3 {
+        border-bottom: thick double white;
+        text-align: center;
+    }
+
+    .burgers {
+        display: block;
+    }
+
+    i.burger.fas {
+        display: none;
+        color: gray;
+    }
+
+    i.burger.show {
+        display: block;
+    }
+
+    .burger.fas {
+        display: none;
+        color: gray;
+    }
+
+    .shopFiltres.show {
+        left: 0;
+    }
+
+}
+
+@media (max-width: 825px) {
+    .shop {
+        margin-top: 15vh;
+        margin-left: 12px;
+    }
+
+    .burgers {
+        top: 15vh;
+        left: 3px;
+    }
+
+    .shopFiltres {
+        top: 30vh;
+    }
+
+    .image.shopProduct img {
+
+
+        height: 110px;
+    }
+}
+
+@media (max-width: 640px) {
+
+    .shopBanner {
+        max-width: 90%;
+        margin-left: 7%;
+    }
+
+    .images,
+    .shopMenu,
+    .shopBanner {
+        margin-right: 30px;
+    }
+
+    .image.shopProduct {
+        margin-right: 0;
+    }
+
+    .image.shopProduct img {
+
+        min-height: 50%;
+        max-height: 95px;
+    }
+}
+
+@media (orientation: portrait) and (min-width: 280px) {
+
+    .shop {
+        margin-top: 10vh;
+    }
+
+    .burgers {
+        top: 10vh;
+
+    }
+
+    div.input-group {
+
+        width: 100%;
+    }
+
+    .shopBanner {
+        max-width: 100%;
+        margin-left: 2%;
+    }
+
+    .nav-item.scroll {
+        display: none;
+    }
+
+}
+
+@media (orientation: portrait) and (min-width: 540px) {
+    .nav-item.scroll {
+        display: block;
+    }
+}
