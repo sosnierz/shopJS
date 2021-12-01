@@ -5,6 +5,7 @@
         'shopFiltres shopBanner shopBanner'
         'shopFiltres  allShop allShop';
     max-width: 1920px;
+
     margin-top: 7vh;
 }
 
@@ -154,7 +155,8 @@ button.btn i {
 }
 
 .image.shopProduct {
-    max-height: 300px;
+    min-height: 300px;
+    max-width: 200px;
     display: flex;
     margin-right: 20px;
     margin-bottom: 20px;
@@ -164,12 +166,62 @@ button.btn i {
     border-radius: 0% 0% 0% 0% / 0% 0% 0% 0%;
     box-shadow: 20px 20px rgba(0, 0, 0, .15);
     transition: all .4s ease;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
 }
+
+
+
+.details {
+    position: absolute;
+    bottom: -110%;
+    left: 0;
+    min-height: 100%;
+    min-width: 100%;
+    background: rgba(88, 78, 78, 0.616);
+    border-radius: none;
+    box-shadow: none;
+    transition: all .4s ease;
+
+}
+
+
+.details button {
+    position: absolute;
+    width: 70%;
+    background-color: white;
+    border: 2px solid rgba(143, 135, 135, 0.65);
+    border-radius: 5%;
+    box-shadow: 2px 2px var(--gray), 0.5em 0 .4em var(--white);
+
+}
+
+.details button:first-child {
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.details button:last-child {
+    bottom: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.image.shopProduct:hover .details {
+    bottom: 0
+}
+
+
+
 
 .image.shopProduct img {
     object-fit: contain;
     width: 100%;
-    min-height: 50%;
+    min-height: 60%;
     max-height: 130px;
     margin-top: 10px;
     align-self: center;
@@ -179,8 +231,8 @@ button.btn i {
 .image.shopProduct h3,
 .image.shopProduct h5 {
     text-align: center;
-    font-size: 0.8em;
-    margin: 10px 0;
+    font-size: 0.9em;
+    margin: 15px 0;
 
 }
 
@@ -191,17 +243,8 @@ button.btn i {
 
 
 
-.shopProduct input {
-
-    width: 100%;
-    background-color: white;
-    border: 2px solid rgba(63, 53, 53, 0.65);
-    border-radius: 5%;
-    box-shadow: 2px 2px var(--gray), 0.5em 0 .4em var(--grey);
-}
-
-.shopProduct input:hover {
-    border-bottom: 4px solid rgba(0, 0, 0, .4);
+.details button:hover {
+    border-bottom: 4px solid rgba(184, 84, 18, 0.733);
 }
 
 

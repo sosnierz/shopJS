@@ -1,31 +1,57 @@
 const shopProduct = document.querySelectorAll('.shopProduct');
 const images = document.querySelector('.images');
-const allA = document.querySelectorAll('.category');
-const fabrics = document.querySelectorAll(".fabric");
-const aPrice = document.querySelectorAll('.input.price');
-const bulbs = document.querySelectorAll('.bulb');
-const btn = document.querySelector('.clear');
+
+
 const min = document.querySelector('#min');
 const max = document.querySelector('#max');
 const burger = document.querySelector(".burgers");
 const activeAside = document.querySelectorAll(".active");
 
 
-// active aside
+
+// render Products cart
+function renderProdcuts() {
+  products.forEach((product) => {
+    images.innerHTML +=`
+<div data-price="" class="image shopProduct ${product.category.join(' ')} ${product.fabric.join(' ')} ${product.bulb}" > <img class="" src=" ${product.image}" alt="${product.title}"/>
+<h3 class="subtitle">${product.title} <br>${product.model}</h3>
+<h5 >${product.price.toFixed(2)} zł</h5>
+
+<div class="details">
+<button class="button has-icon is-inverted">Dodaj do <i
+class="fa fa-shopping-cart"></i></button>
+<button class="button has-icon is-inverted">Więcej...</button>
+ </div>
+</div>`
+});
+}
+renderProdcuts();
+
+// active aside burger
 burger.addEventListener("click", function () {
   for (let i = 0; i < activeAside.length; i++) {
       activeAside[i].classList.toggle("show")
   }
 }) 
 
-// fabric
-function change() {
+// filters
+const allCheckboxes = document.querySelectorAll('input[type=checkbox]');
+
+
+     const categoryChecked = document.querySelectorAll('.categories input.category:checked');
+      const fabricChecked = document.querySelectorAll('input.fabric');
+      const priceChecked = document.querySelectorAll('input.price');
+      const bulbChecked = document.querySelectorAll('input.bulb');
+
+         
+
+  function change() {
    
     const filters = {
-    category: getClassOfCheckedCheckboxes(allA),
-     fabric: getClassOfCheckedCheckboxes(fabrics),
-     prices:getClassOfCheckedCheckboxes(aPrice),
-     bulb:getClassOfCheckedCheckboxes(bulbs)
+    category: getClassOfCheckedCheckboxes(categoryChecked),
+     fabric: getClassOfCheckedCheckboxes(fabricChecked),
+     prices:getClassOfCheckedCheckboxes(priceChecked),
+     bulb:getClassOfCheckedCheckboxes(bulbChecked)
          };
   
     filterResults(filters);
@@ -127,8 +153,9 @@ function change() {
     for (let i = 0; i < hiddenElems.length; i++) {
       hiddenElems[i].style.display = "none";
     }
-   
 // button uncheckbox  
+
+const btn = document.querySelector('.btn.clear')
     function uncheckAll() {
         document.querySelectorAll('input[type="checkbox"]')
           .forEach(el => el.checked = false);
@@ -223,16 +250,6 @@ input.addEventListener('input', searchTask)
 //   });
 //   field.append(...sortNames)
 //   }
-function renderProdcuts() {
-  products.forEach((product) => {
-    images.innerHTML +=`
-<div data-price="" class="image shopProduct ${product.category.join(' ')} ${product.fabric.join(' ')} ${product.bulb}" > <img class="" src=" ${product.image}" alt="${product.title}"/>
-<a href="/shop/${product.id}">
-<h3 class="subtitle">${product.title} <br>${product.model}</h3>
-<h5 >${product.price.toFixed(2)} zł</h5>
- <input class="addCart" type="button" value="Szczegóły..."/>
- </a>
-</div>`;
-});
-}
-renderProdcuts();
+
+
+// add class show to products cart
