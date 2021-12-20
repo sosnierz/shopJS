@@ -1,23 +1,12 @@
-
 const images = document.querySelector('.images');
-const allCheckboxes = [...document.querySelectorAll('input[type=checkbox]')];
-const allA = document.querySelectorAll('.category');
-const fabrics = document.querySelectorAll(".fabric");
-const aPrice = document.querySelectorAll('.input.price');
-const bulbs = document.querySelectorAll('.bulb');
-const btn = document.querySelector('.clear');
-const min = document.querySelector('#min');
-const max = document.querySelector('#max');
-const burger = document.querySelector(".burgers");
-const activeAside = document.querySelectorAll(".active");
 
-
+const aCategories = document.querySelectorAll('.category');
 
 // render Products cart
 function renderProdcuts() {
   products.forEach((product) => {
     images.innerHTML +=`
-<div data-price class="image shopProduct ${product.category} ${product.fabric.join(' ')} ${product.bulb}" > <img class="" src=" ${product.image}" alt="${product.title}"/>
+<div  class="image shopProduct ${product.category} ${product.fabric.join(' ')} ${product.bulb} ${product.price}" > <img class="" src=" ${product.image}" alt="${product.title}"/>
 <h3 class="subtitle">${product.title} <br>${product.model}</h3>
 <h5 class="priceProduct" >${product.price.toFixed(2)} zł</h5>
 
@@ -31,6 +20,42 @@ class="fa fa-shopping-cart"></i></button>
 }
 renderProdcuts();
 
+const shopProduct= document.querySelectorAll('.shopProduct');
+for (i = 0; i < aCategories.length; i++) {
+
+  aCategories[i].addEventListener('click', (e) => {
+      e.preventDefault()
+      
+      const filter = e.target.dataset.filter;
+      console.log(filter);
+      
+      shopProduct.forEach((product)=> {
+          if (filter === 'all'){
+              product.style.display = 'block'
+          } else {
+              if (product.classList.contains(filter)){
+                  product.style.display = 'block'
+              } else {
+                  product.style.display = 'none'
+              }
+          }
+      });
+  });
+};
+
+
+const allCheckboxes = [...document.querySelectorAll('input[type=checkbox]')];
+const fabrics = document.querySelectorAll(".fabric");
+const bulb = document.querySelectorAll('.bulb');
+const btn = document.querySelector('.clear');
+const min = document.querySelector('#min');
+const max = document.querySelector('#max');
+const burger = document.querySelector(".burgers");
+const activeAside = document.querySelectorAll(".active");
+
+
+
+
 // active aside burger
 burger.addEventListener("click", function () {
   for (let i = 0; i < activeAside.length; i++) {
@@ -40,42 +65,90 @@ burger.addEventListener("click", function () {
 
 // filters
 
-const shopProduct= Array.from(document.querySelectorAll('.shopProduct'));
+function change() {
+   
+  const filters = {
+   fabric: getClassOfCheckedCheckboxes(fabrics),
+   bulb:getClassOfCheckedCheckboxes(bulb)
+       };
 
-// allCheckboxes.forEach(function(checkbox) {
-// checkbox.addEventListener('change', e => {
+  filterResults(filters);
+}
+
+function getClassOfCheckedCheckboxes(checkboxes) {
+  let classes = [];
+
+  if (checkboxes && checkboxes.length > 0) {
+    for (let i = 0; i < checkboxes.length; i++) {
+     const cb = checkboxes[i];
+
+      if (cb.checked) {
+        classes.push(cb.getAttribute("data-filter"));
+      }
+    }
+  }
+
+  return classes;
+}
+
+function filterResults(filters) {
+ 
+  let hiddenElems = [];
+
+  if (!shopProduct || shopProduct.length <= 0) {
+    return;
+  }
+  for (let i = 0; i < shopProduct.length; i++) {
+    let el = shopProduct[i];
+
+
+//   fabric
+    if (filters.fabric.length > 0) {
+      let isHidden = true;
+
+      for (let j = 0; j < filters.fabric.length; j++) {
+        let filter = filters.fabric[j];
+
+        if (el.classList.contains(filter)) {
+          isHidden = false;
+          break;
+        }
+      }
+      if (isHidden) {
+        hiddenElems.push(el);
+      }
+    }  
   
-//   if(e.target.checked){
-//     e.preventDefault()
-        
-//     // const category = e.target.getAttribute('data-filter');
-//     const color = e.target.getAttribute('data-color');
-//     const number = e.target.getAttribute('data-number');;
-//     console.log(category, color, number);
-    
-//     shopProduct.forEach((product)=> {
-    
-//      if (product.classList.contains(category) || product.classList.contains(color) || product.classList.contains(number)) {
-//               if(product.classList.contains(category) && product.classList.contains(color)){
-//                 product.style.display = 'block'
-//             } 
-//             else if(product.classList.contains(category) &&product.classList.contains(number))
-//             product.style.display = 'block'
-//           else {
-//                 product.style.display = 'block'
-//             }      
-//      }
-//    else{
-//           product.style.display = 'none'
-//         }
+  //   bulb
+    if (filters.bulb.length > 0) {
+      let isHidden = true;
 
+      for (let p = 0; p < filters.bulb.length; p++) {
+        let filter = filters.bulb[p];
+        if (el.classList.contains(filter)) {
+          isHidden = false;
+          break;
+        }
+     }
+      if (isHidden) {
+        hiddenElems.push(el);
+      }
+    }  
         
-//     });
-// }
-// });
-// });
 
-  
+  for (let i = 0; i < shopProduct.length; i++) {
+    shopProduct[i].style.display = "block";
+  }
+
+  if (hiddenElems.length <= 0) {
+    return;
+  }
+
+  for (let i = 0; i < hiddenElems.length; i++) {
+    hiddenElems[i].style.display = "none";
+  }
+  }
+}
 // button uncheckbox  
   function uncheckAll() {
       document.querySelectorAll('input[type="checkbox"]')
@@ -116,16 +189,16 @@ high.addEventListener("change",()=>{
   });
   });
 
-//   function sortEl(){
+  function sortEl(){
    
-//      sortNames = div.sort((a, b)=> { 
-//       var item1 = document.querySelector(".subtitle").toUpperCase();
-//       var item2 = document.querySelector(".subtitle").toUpperCase();
-//       return item1-item2
+     sortNames = div.sort((a, b)=> { 
+      var item1 = document.querySelector(".subtitle").toUpperCase();
+      var item2 = document.querySelector(".subtitle").toUpperCase();
+      return item1-item2
   
-//   });
-//   field.append(...sortNames)
-//   }
+  });
+  field.append(...sortNames)
+  }
 
 
 // add class show to products cart

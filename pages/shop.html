@@ -64,127 +64,80 @@
                     <h4>Kategorie lamp</h4>
                     <ul class="categories">
 
-                        <div>
-                            <a href="./products/chandelier.html">
-                                <label for="zyrandole">Żyrandole</label></a>
-                        </div>
-
-                        <div>
-                            <a href="./products/kids.html">
-                                <label for="dziecieca">Dziecięce</label></a>
-
-                        </div>
-                        <div>
-                            <a href="./products/swing.html"> <label for="sufitowe">Sufitowe</label></a>
-
-                        </div>
-                        <div>
-                            <a href="./products/sconce.html"> <label for="kinkietowe">Kinkietowe</label></a>
-
-
-                        </div>
-                        <div>
-                            <a href="./products/floor.html"><label for="stojaca">Stojące</label></a>
-
-                        </div>
-                        <div>
-                            <a href="./products/night.html"> <label for="stolowa">Nocne</label></a>
-                        </div>
+                        <a href="#" class="category active" data-filter="all">Wszystkie</a>
+                        <a href="#" class="category" data-filter="zyrandole">Żyrandole</a>
+                        <a href="#" class="category" data-filter="kinkietowe">Kinkiety</a>
+                        <a href="#" class="category" data-filter="dzieciece">Dziecięce</a>
+                        <a href="#" class="category" data-filter="sufitowe">Sufitowe</a>
+                        <a href="#" class="category" data-filter="stolowe">Stołowe</a>
+                        <a href="#" class="category" data-filter="stojace">Stojące</a>
                     </ul>
                 </div>
 
-                <div>
-                    <h4>Cena</h4>
-                    <ul>
-                        <div>
-                            <input class="price" type="checkbox" data-price="0:50" value="1" name="price">
-                            <label for="price">poniżej 50,00 zł</label>
-                        </div>
-                        <div>
-                            <input class="price" type="checkbox" data-price="50:100" value="2" name="price">
-                            <label for="price"> od 50,01 do 100,00 zł</label>
-                        </div>
-                        <div>
-                            <input class="price" type="checkbox" data-price="100:200" value="3" name="price">
-                            <label for="price">od 100,01 do 200,00 zł</label>
-                        </div>
-                        <div>
-                            <input class="price" type="checkbox" data-filter="200:300" value="4" name="price">
-                            <label for="price">od 200,00 do 300,00 zł</label>
-                        </div>
-                        <div>
-                            <input class="price" type="checkbox" data-price="300:500" value="5" name="price">
-                            <label for="price">od 300,00 do 500,00 zł</label>
-                        </div>
-                        <div>
-                            <input class="price" type="checkbox" data-price="500:@Int32.MaxValue" value="6"
-                                name="price">
-                            <label for="price">powyżej 500,00 zł</label>
-                        </div>
-                    </ul>
-                </div>
-
-                <div>
+                 <div>
                     <h4>Kolor</h4>
                     <ul class="fabrics">
                         <div>
-                            <input class="fabric" type="checkbox" data-color="white" name="white">
+                            <input class="fabric" type="checkbox" data-filter="white" name="white" onclick='change()'>
                             <label for="white">Biały</label>
                         </div>
                         <div>
-                            <input class="fabric" type="checkbox" data-color="black" name="black">
+                            <input class="fabric" type="checkbox" data-filter="black" name="black" onclick='change()'>
                             <label for="black">Czarny</label>
                         </div>
                         <div>
-                            <input class="fabric" type="checkbox" data-filter="silver" name="silver">
+                            <input class="fabric" type="checkbox" data-filter="silver" name="silver" onclick='change()'>
                             <label for="silver">Srebny</label>
                         </div>
                         <div>
-                            <input class="fabric" type="checkbox" data-color="gold" name="gold">
+                            <input class="fabric" type="checkbox" data-filter="gold" name="gold" onclick='change()'>
                             <label for="gold">Żłoty</label>
                         </div>
                         <div>
-                            <input class="fabric" type="checkbox" data-color="grey" name="grey">
+                            <input class="fabric" type="checkbox" data-filter="grey" name="grey" onclick='change()'>
                             <label for="grey">Szary</label>
                         </div>
                         <div>
-                            <input class="fabric" type="checkbox" data-color="copper" name="copper">
+                            <input class="fabric" type="checkbox" data-filter="copper" name="copper" onclick='change()'>
                             <label for="coppe">Miedziany</label>
                         </div>
                         <div>
-                            <input class="fabric" type="checkbox" data-color="beech" name="beech">
+                            <input class="fabric" type="checkbox" data-filter="beech" name="beech">
                             <label for="beech">Buk</label>
                         </div>
                         <div>
-                            <input class="fabric" type="checkbox" data-color="oak" name="oak">
+                            <input class="fabric" type="checkbox" data-filter="oak" name="oak" onclick='change()'>
                             <label for="oak">Dąb</label>
                         </div>
                         <div>
-                            <input class="fabric" type="checkbox" data-color="venge" name="venge">
+                            <input class="fabric" type="checkbox" data-filter="venge" name="venge" onclick='change()'>
                             <label for="venge">Venge</label>
                         </div>
                         <div>
-                            <input class="fabric" type="checkbox" data-color="wood" name="wood">
+                            <input class="fabric" type="checkbox" data-filter="wood" name="wood" onclick='change()'>
                             <label for="wood">Drewno w kolorze lampy</label>
                         </div>
                         <div>
-                            <input class="fabric" type="checkbox" data-color="glass" name="glass">
+                            <input class="fabric" type="checkbox" data-filter="glass" name="glass" onclick='change()'>
                             <label for="glass">Szkło</label>
                         </div>
                         <div>
-                            <input class="fabric" type="checkbox" data-color="metal" name="metal">
+                            <input class="fabric" type="checkbox" data-filter="metal" name="metal" onclick='change()'>
                             <label for="metal">Metal</label>
                         </div>
                         <div>
-                            <input class="fabric" type="checkbox" data-color="material" name="material">
+                            <input class="fabric" type="checkbox" data-filter="material" name="material"
+                                onclick='change()'>
                             <label for="material">Materiał</label>
                         </div>
                         <div>
-                            <input class="fabric" type="checkbox" data-color="plastic" name="plastic">
+                            <input class="fabric" type="checkbox" data-filter="plastic" name="plastic"
+                                onclick='change()'>
                             <label for="plastic">Plastik</label>
                         </div>
                         <div>
-                            <input class="fabric" type="checkbox" data-color="multiColor" name="multiColor">
+                            <input class="fabric" type="checkbox" data-filter="multiColor" name="multiColor"
+                                onclick='change()'>
                             <label for="multiColor">Kolorowe</label>
                         </div>
                     </ul>
@@ -194,23 +147,23 @@
                     <h4>Ilość punktów świetlnych</h4>
                     <ul class="lightingPoints">
                         <div>
-                            <input class="bulb" type="checkbox" data-number="1" name="bulb">
+                            <input class="bulb" type="checkbox" data-filter="1" name="bulb" onclick='change()'>
                             <label for="1">1</label>
                         </div>
                         <div>
-                            <input class="bulb" type="checkbox" data-number="2" name="bulb">
+                            <input class="bulb" type="checkbox" data-filter="2" name="bulb" onclick='change()'>
                             <label for="2">2</label>
                         </div>
                         <div>
-                            <input class="bulb" type="checkbox" data-number="3" name="bulb">
+                            <input class="bulb" type="checkbox" data-filter="3" name="bulb" onclick='change()'>
                             <label for="3">3</label>
                         </div>
                         <div>
-                            <input class="bulb" type="checkbox" data-number="4" name="bulb">
+                            <input class="bulb" type="checkbox" data-filter="4" name="bulb" onclick='change()'>
                             <label for="4">4</label>
                         </div>
                         <div>
-                            <input class="bulb" type="checkbox" data-number=">5" name="bulb">
+                            <input class="bulb" type="checkbox" data-filter=">5" name="bulb" onclick='change()'>
                             <label for="5">5</label>
                         </div>
                     </ul>
@@ -331,6 +284,7 @@
 
     <script src="../shopProducts.js"></script>
     <script src="../js/shop.js"></script>
+    <script src="../js/allShop.js"></script>
 
 </body>
 
