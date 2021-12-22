@@ -1,15 +1,22 @@
 const images = document.querySelector('.images');
-
+const allCheckboxes = [...document.querySelectorAll('input[type=checkbox]')];
+const fabrics = document.querySelectorAll(".fabric");
+const bulb = document.querySelectorAll('.bulb');
+const btn = document.querySelector('.clear');
+const burger = document.querySelector(".burgers");
+const activeAside = document.querySelectorAll(".active");
 const aCategories = document.querySelectorAll('.category');
+const btn_prev= document.querySelector('.page-link.prev');
+const btn_next= document.querySelector('.page-link.next');
+
 
 // render Products cart
-function renderProdcuts() {
+function renderProducts() {
   products.forEach((product) => {
     images.innerHTML +=`
-<div  class="image shopProduct ${product.category} ${product.fabric.join(' ')} ${product.bulb} ${product.price}" > <img class="" src=" ${product.image}" alt="${product.title}"/>
+<div data-price=${product.price} class="image shopProduct ${product.category} ${product.fabric.join(' ')} ${product.bulb} " > <img class="" src=" ${product.image}" alt="${product.title}"/>
 <h3 class="subtitle">${product.title} <br>${product.model}</h3>
 <h5 class="priceProduct" >${product.price.toFixed(2)} zł</h5>
-
 <div class="details">
 <button class="button has-icon is-inverted">Dodaj do <i
 class="fa fa-shopping-cart"></i></button>
@@ -18,8 +25,81 @@ class="fa fa-shopping-cart"></i></button>
 </div>`
 });
 }
-renderProdcuts();
+renderProducts();
 
+// pagination
+ const productsItems = document.querySelector(".images").children;
+ const prev = document.querySelector(".prev");
+ const next = document.querySelector(".next");
+ const page = document.querySelector(".page-num");
+ const maxItem = 20;
+ let index = 1;
+  
+  const pagination = Math.ceil(productsItems.length/maxItem);
+  console.log(pagination)
+
+  prev.addEventListener("click",function(){
+    index--;
+    check();
+    showItems();
+  })
+  next.addEventListener("click",function(){
+  	index++;
+  	check();
+    showItems();  
+  })
+
+  function check(){
+  	 if(index==pagination){
+  	 	next.classList.add("disabled");
+  	 }
+  	 else{
+  	   next.classList.remove("disabled");	
+  	 }
+
+  	 if(index==1){
+  	 	prev.classList.add("disabled");
+  	 }
+  	 else{
+  	   prev.classList.remove("disabled");	
+  	 }
+  }
+
+  function showItems() {
+  	 for(let i=0;i<productsItems.length; i++){
+  	 	productsItems[i].classList.remove("show");
+  	 	productsItems[i].classList.add("hide");
+
+
+  	    if(i>=(index*maxItem)-maxItem && i<index*maxItem){
+  	 	  // if i greater than and equal to (index*maxItem)-maxItem;
+  		  // means  (1*8)-8=0 if index=2 then (2*8)-8=8
+          productsItems[i].classList.remove("hide");
+          productsItems[i].classList.add("show");
+  	    }
+  	    page.innerHTML=index;
+  	 }
+
+  	 	
+  }
+
+  window.onload=function(){
+  	showItems();
+  	check();
+  }
+
+
+
+
+
+// active aside burger
+burger.addEventListener("click", function () {
+  for (let i = 0; i < activeAside.length; i++) {
+      activeAside[i].classList.toggle("show")
+  };
+}) ;
+
+// filter categories
 const shopProduct= document.querySelectorAll('.shopProduct');
 for (i = 0; i < aCategories.length; i++) {
 
@@ -44,24 +124,6 @@ for (i = 0; i < aCategories.length; i++) {
 };
 
 
-const allCheckboxes = [...document.querySelectorAll('input[type=checkbox]')];
-const fabrics = document.querySelectorAll(".fabric");
-const bulb = document.querySelectorAll('.bulb');
-const btn = document.querySelector('.clear');
-const min = document.querySelector('#min');
-const max = document.querySelector('#max');
-const burger = document.querySelector(".burgers");
-const activeAside = document.querySelectorAll(".active");
-
-
-
-
-// active aside burger
-burger.addEventListener("click", function () {
-  for (let i = 0; i < activeAside.length; i++) {
-      activeAside[i].classList.toggle("show")
-  };
-}) ;
 
 // filters
 
@@ -149,6 +211,8 @@ function filterResults(filters) {
   }
   }
 }
+
+
 // button uncheckbox  
   function uncheckAll() {
       document.querySelectorAll('input[type="checkbox"]')
@@ -159,6 +223,8 @@ function filterResults(filters) {
   }
     btn.addEventListener('click', uncheckAll)      
   
+
+
 // Search input
 const input = document.querySelector('#search');
 const divImages = document.querySelector('.images');
@@ -175,30 +241,32 @@ const searchTask = (e) => {
 }
 input.addEventListener('input', searchTask)
 
-// Sorting cards
-const high = document.querySelector('.high');
-high.addEventListener("change",()=>{
-  let prices = document.getElementsByClassName('.priceProduct');
-  prices.sort(function (a, b) {
-  if(a > b)
-  return -1;
-  if(a < b)
-  return 1;
-  if(a==b)
-  return 0 ;
-  });
-  });
 
-  function sortEl(){
-   
-     sortNames = div.sort((a, b)=> { 
-      var item1 = document.querySelector(".subtitle").toUpperCase();
-      var item2 = document.querySelector(".subtitle").toUpperCase();
-      return item1-item2
+
+// Sorting cards
+const selectResult = document.querySelector('.sorting');
+let div = Array.from(divImages.children);
+
+selectResult.addEventListener("change", function() {
   
-  });
-  field.append(...sortNames)
+  if(selectResult.value == "high"){
+    sortHigh = div.sort((a, b) => {
+      const ax = a.getAttribute('data-price');
+      const bx = b.getAttribute('data-price');
+      return ax-bx ;
+    })
+    divImages.append(...sortHigh)
   }
+  else {
+    sortLow = div.sort((a, b) => {
+      const ax = a.getAttribute('data-price');
+      const bx = b.getAttribute('data-price');
+      return bx-ax ;
+    })
+    divImages.append(...sortLow)
+  }
+  
+});
 
 
 // add class show to products cart

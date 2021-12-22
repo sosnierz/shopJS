@@ -126,7 +126,37 @@ button.btn i {
     transform: translateX(-50%);
 }
 
+.pagination {
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+}
 
+.pagination div {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.pagination .page {
+    color: gray;
+}
+
+.pagination .prev,
+.pagination .next {
+    color: #000;
+    border: 1px solid #000;
+    font-size: 15px;
+    padding: 7px 15px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.pagination .prev.disabled,
+.pagination .next.disabled {
+    border-color: gray;
+    color: gray;
+    pointer-events: none;
+}
 
 .page-item a,
 .nav-item.basket a {
@@ -177,8 +207,29 @@ button.btn i {
     cursor: pointer;
     overflow: hidden;
     position: relative;
+
 }
 
+.image.shopProduct.hide {
+    display: none;
+}
+
+.image.shopProduct.show {
+    display: block;
+    animation: show .5s ease;
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
 
 
 .details {
@@ -190,7 +241,8 @@ button.btn i {
     background: rgba(88, 78, 78, 0.616);
     border-radius: none;
     box-shadow: none;
-    transition: all .4s ease;
+    transition: all .3s ease;
+    transition-delay: 0.4s;
 
 }
 
