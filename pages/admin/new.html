@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    </link>
+</head>
+
+<body class="admin">
+    <header>
+        <nav class="navbar navbar-bottom">
+            <div class="container navbar-container">
+                <div>
+                    <a href="/admin/products">
+                        <h3 class="title">Admin Panel</h3>
+                    </a>
+                </div>
+                <div class="navbar-item">
+                    <div class="navbar-buttons">
+                        <div class="navbar-item">
+                            <a href="/admin/products"><i class="fa fa-star"></i> Produkty</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-half">
+                <h1 class="subtitle">Dodaj produkt</h1>
+
+                <form method="POST" enctype="multipart/form-data">
+                    <div class="field">
+                        <label class="label">Nazwa</label>
+                        <input class="input" placeholder="Nazwa" name="title">
+                        <p class="help is-danger">${getError(errors, 'title')}</p>
+                    </div>
+                    <div class="field">
+                        <label class="label">Model</label>
+                        <input class="input" placeholder="Model" name="model">
+                        <p class="help is-danger">${getError(errors, 'model')}</p>
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Cena</label>
+                        <input class="input" placeholder="Cena" name="price">
+                        <p class="help is-danger">${getError(errors, 'price')}</p>
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Zdjęcie</label>
+                        <input type="file" name="image" />
+                    </div>
+
+
+                    <div class="field">
+                        <label class="label">Kategoria</label>
+
+                        <input type="checkbox" class="" name="category" value="klasyczne">
+                        <label for="category"> Klasyczne </label><br>
+
+
+                        <input type="checkbox" class="" name="category" value="nowoczesne">
+
+                        <label for="category"> Nowoczesne </label><br>
+
+                        <input type="checkbox" class="" name="category" value="sufitowe">
+                        <label for="category"> Sufitowe </label><br>
+
+
+                        <input type="checkbox" class="" name="category" value="stojace">
+                        <label for="category"> Stojące </label><br>
+
+
+                        <input type="checkbox" class="" name="category" value="dzieciece">
+                        <label for="category"> Dziecięce </label><br>
+
+
+                        <input type="checkbox" class="" name="category" value="stolowe">
+                        <label for="category"> Stołowe </label><br>
+
+
+                        <input type="checkbox" class="" name="category" value="kinkietowe">
+                        <label for="category"> Kinkietowe </label><br>
+
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Materiał</label>
+
+                        <input type="checkbox" class="" name="fabric" value="white">
+                        <label for="fabric"> Biały </label><br>
+
+
+                        <input type="checkbox" class="" name="fabric" value="black">
+                        <label for="fabric"> Czarny </label><br>
+
+                        <input type="checkbox" class="" name="fabric" value="red">
+                        <label for="fabric"> Czerwony </label><br>
+
+
+                        <input type="checkbox" class="" name="fabric" value="silver">
+                        <label for="fabric">Srebny </label><br>
+
+
+                        <input type="checkbox" class="" name="fabric" value="gold">
+                        <label for="fabric"> Złoty </label><br>
+
+
+                        <input type="checkbox" class="" name="fabric" value="grey">
+                        <label for="fabric"> Szary </label><br>
+
+
+                        <input type="checkbox" class="" name="fabric" value="copper">
+                        <label for="fabric"> Miedziany </label><br>
+
+
+                        <input type="checkbox" class="" name="fabric" value="beech">
+                        <label for="fabric"> Buk </label><br>
+
+
+                        <input type="checkbox" class="" name="fabric" value="oak">
+                        <label for="fabric"> Dąb </label><br>
+
+                        <input type="checkbox" class="" name="fabric" value="venge">
+                        <label for="fabric"> Venge </label><br>
+
+                        <input type="checkbox" class="" name="fabric" value="wood">
+                        <label for="fabric"> Drewno w kolorze lampy </label><br>
+
+                        <input type="checkbox" class="" name="fabric" value="glass">
+                        <label for="fabric"> Szkło </label><br>
+
+                        <input type="checkbox" class="" name="fabric" value="material">
+                        <label for="fabric"> Szkło </label><br>
+
+                        <input type="checkbox" name="fabric" value="metal">
+                        <label for="fabric">Metal</label><br>
+
+                        <input type="checkbox" name="fabric" value="material">
+                        <label for="fabric">Materiał</label><br>
+
+                        <input type="checkbox" class="" name="fabric" value="multiColor">
+                        <label for="fabric"> Kolorowe </label><br>
+
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Regulacja kąta świecenia</label>
+                        <input type="checkbox" class="" name="shine" value="tak">
+                        <label for="shine"> Tak </label><br>
+                        <input type="checkbox" class="" name="shine" value="nie">
+                        <label for="shine"> Nie </label><br>
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Rozmiar</label>
+                        <input class="input" placeholder="Rozrmiar" name="size">
+                        <p class="help is-danger">${getError(errors, 'size')}</p>
+                    </div>
+                    <div class="field">
+                        <label class="label">Ilość żarówek</label>
+                        <input class="input" placeholder="Liczba" name="bulb" value={}>
+                        <p class="help is-danger">${getError(errors, 'bulb')}</p>
+                    </div>
+                    <div class="field">
+                        <label class="label">Informacje o produkcie</label>
+                        <textarea class="input" name="information" row="150" column="150"></textarea>
+                        <p class="help is-danger">${getError(errors, 'information')}</p>
+                    </div>
+
+
+                    <br />
+                    <button class="button is-primary">Utwórz</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
