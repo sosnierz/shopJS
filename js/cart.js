@@ -16,6 +16,8 @@ function checkCartNumber() {
 		cartSpan.textContent = productNumbers;
 	}
 }
+
+
 function cartNumbers(product) {
 	let productNumbers = localStorage.getItem('cartNumbers');
 	productNumbers = parseInt(productNumbers);
@@ -30,6 +32,8 @@ function cartNumbers(product) {
 	}
 	setItems(product);
 	}
+
+
 	function setItems(product) {
 		let cartItems = localStorage.getItem('productsInCart');
 		cartItems = JSON.parse(cartItems);
@@ -54,16 +58,19 @@ function cartNumbers(product) {
 
 	function totalCost(product) {
 		let cartCost = localStorage.getItem('totalCost');
-		
+        let cartItems = localStorage.getItem('productsInCart');
+		cartItems = JSON.parse(cartItems);
 
 		if(cartCost != null) {
 			cartCost = parseInt(cartCost);
 			localStorage.setItem('totalCost', cartCost + product.price);
 		}
 		else {
-			localStorage.setItem('totalCost', product.price);
+			localStorage.setItem("totalCost", product.price);
 		}
-	}
+     	}
+
+	
 
 	function displayCart() {
 		let cartItems = localStorage.getItem('productsInCart');
@@ -75,21 +82,23 @@ function cartNumbers(product) {
 			cartProducts.innerHTML = ''
 			Object.values(cartItems).map(item => {
 				cartProducts.innerHTML +=
-				`<div class="cart-item message" >
+				`<div class="cart-item message" data-id="${item.id}">
 				<h3 class="subtitle">${item.title} ${item.model}</h3>
 				<div class="cart-right">
-				  <div><span> ${item.price.toFixed(2)} zł</span></div>
+				  <div class="priceItem"><span> ${item.price.toFixed(2)} zł</span></div>
 					<div class="changeQuantity">
-					  	  <button class="button is-danger"><span class="icon is-small"><i class="fas fa-plus"></i></span></button></form>
-						  <span class="numQ">${item.inCart}</span>
-						  <button class="button is-danger"><span class="icon is-small"><i class="fas fa-minus"></i></span></button>
+					  
+					<button class="button is-danger minus" value="${item.id} onclick="decrementCart()"><span class="icon is-small"><i class="fas fa-minus"></i></span></button>
+					<span class="numQ" value='${item.inCart}'>${item.inCart}</span>
+					
+					<button  class="button is-danger plus" value="${item.id} onclick="incrementCart()"><span class="icon is-small"><i class="fas fa-plus"></i></span></button> 
 					 </div>
 				</div>
 				<div class="price is-size-4">
 				   ${(item.price*item.inCart).toFixed(2)} zł
 				</div>
 				<div class="remove">
-				 <button class="button is-danger"><span class="icon is-small"><i class="fas fa-times"></i></span></button>
+				 <button class="button is-danger delete" onclick="deleteItem()"><span class="icon is-small"><i class="fas fa-times"></i></span></button>
 				  
 				</div>
 			  </div>
@@ -105,3 +114,7 @@ function cartNumbers(product) {
 checkCartNumber();
 displayCart()
 
+function deleteItem(e) {
+	console.log(e.target.parentElement.parentElement.textContent)
+	
+}
