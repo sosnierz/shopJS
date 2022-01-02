@@ -39,18 +39,18 @@ function cartNumbers(product) {
 		cartItems = JSON.parse(cartItems);
 
 		if(cartItems != null) {
-			if(cartItems[product.model] == undefined) {
+			if(cartItems[product.id] == undefined) {
 				cartItems = {
 					...cartItems,
-					[product.model]:product
+					[product.id]:product
 				}
 			}
-			cartItems[product.model].inCart += 1;
+			cartItems[product.id].inCart += 1;
 		}
 		else {
 		product.inCart = 1;
 		cartItems = {
-			[product.model]:product
+			[product.id]:product
 		}
 	}
 		localStorage.setItem("productsInCart", JSON.stringify(cartItems));
@@ -98,7 +98,7 @@ function cartNumbers(product) {
 				   ${(item.price*item.inCart).toFixed(2)} zł
 				</div>
 				<div class="remove">
-				 <button class="button is-danger delete" onclick="deleteItem()"><span class="icon is-small"><i class="fas fa-times"></i></span></button>
+				 <button class="button is-danger delete" onclick="deleteItem(id)" data-id="${item.id}"><span class="icon is-small"><i class="fas fa-times"></i></span></button>
 				  
 				</div>
 			  </div>
@@ -114,7 +114,15 @@ function cartNumbers(product) {
 checkCartNumber();
 displayCart()
 
-function deleteItem(e) {
-	console.log(e.target.parentElement.parentElement.textContent)
+function deleteItem(id) {
+	let cartItems = localStorage.getItem('productsInCart');
+		productsInCart = JSON.parse(cartItems);
+	productsInCart.forEach(function(product, index) {
+	if(id === product.id) {
+	productsInCart.splice(index, 1);
+	}	
+	});
+	localStorage.setItem("productsInCart", JSON.stringify(cartItems));
+	
 	
 }
