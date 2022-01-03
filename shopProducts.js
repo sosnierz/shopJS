@@ -12,7 +12,7 @@ const products = [ {
     "shine": "nie",
     "size": "80x65",
     "bulb": "7",
-    "id": "e69d2aeb",
+   
     "metal": "on",
     "inCart": 0
   },
@@ -31,7 +31,7 @@ const products = [ {
     "shine": "false",
     "size": "80x65",
     "bulb": "7",
-    "id": "437925ac",
+    
     "inCart": 0
   },
   {
@@ -48,7 +48,7 @@ const products = [ {
     "shine": "nie",
     "size": "80x65",
     "bulb": "7",
-    "id": "e69d2aeb",
+   
     "metal": "on",
     "inCart": 0
   },
@@ -67,7 +67,7 @@ const products = [ {
     "shine": "false",
     "size": "80x65",
     "bulb": "7",
-    "id": "437925ac",
+    
     "inCart":0
   },
   {
@@ -84,7 +84,7 @@ const products = [ {
     "shine": "nie",
     "size": "80x65",
     "bulb": "7",
-    "id": "e69d2aeb",
+   
     "metal": "on",
     "inCart":0
   },
@@ -103,7 +103,7 @@ const products = [ {
     "shine": "false",
     "size": "80x65",
     "bulb": "7",
-    "id": "437925ac",
+    
     "inCart": 0
   },
   {
@@ -120,7 +120,7 @@ const products = [ {
     "shine": "nie",
     "size": "80x65",
     "bulb": "7",
-    "id": "e69d2aeb",
+    
     "metal": "on",
     "inCart": 0
   },
@@ -139,7 +139,8 @@ const products = [ {
     "shine": "false",
     "size": "80x65",
     "bulb": "7",
-    "id": "437925ac"
+    "metal": "on",
+    "inCart": 0
   },
   {
     "title": "Candela",
@@ -156,7 +157,7 @@ const products = [ {
     "shine": "false",
     "size": "45x20",
     "bulb": "1",
-    "id": "11085dbb",
+   
     "inCart": 0
   },
   {
@@ -174,7 +175,7 @@ const products = [ {
     "shine": "false",
     "size": "45x20",
     "bulb": "1",
-    "id": "e87a7cc4",
+    
     "inCart": 0
   },
   {
@@ -193,7 +194,7 @@ const products = [ {
     "shine": "false",
     "size": "80x90",
     "bulb": "2",
-    "id": "b4f9e5fc",
+   
     "inCart": 0
   },
   {
@@ -212,7 +213,7 @@ const products = [ {
     "shine": "false",
     "size": "45x25",
     "bulb": 2,
-    "id": "5cfa55c5",
+  
     "inCart": 0
   },
   {
@@ -231,7 +232,7 @@ const products = [ {
     "shine": "false",
     "size": "45x25",
     "bulb": 2,
-    "id": "85b56bb2",
+   
     "inCart": 0
   },
   {
@@ -250,7 +251,7 @@ const products = [ {
     "shine": "false",
     "size": "55x25",
     "bulb": 3,
-    "id": "a203dbf5",
+    
     "inCart": 0
   },
   {
@@ -268,7 +269,7 @@ const products = [ {
     "shine": "false",
     "size": "55x25",
     "bulb": 3,
-    "id": "1948143a",
+  
     "inCart": 0
   },
   {
@@ -287,7 +288,7 @@ const products = [ {
     "shine": "false",
     "size": "60x25",
     "bulb": 4,
-    "id": "2a80e30e",
+    
     "inCart": 0
   },
   {
@@ -305,7 +306,7 @@ const products = [ {
     "shine": "false",
     "size": "60x25",
     "bulb": 4,
-    "id": "53d316ec",
+
     "inCart": 0
   },
   {
@@ -323,7 +324,7 @@ const products = [ {
     "shine": "false",
     "size": "60x25",
     "bulb": 4,
-    "id": "abdc2607",
+   
     "inCart": 0
   },
   {
@@ -342,7 +343,7 @@ const products = [ {
     "shine": "false",
     "size": "45x50",
     "bulb": "2",
-    "id": "d12de1f8",
+    
     "inCart": 0
   },
   {
@@ -361,7 +362,7 @@ const products = [ {
     "shine": "false",
     "size": "30x20",
     "bulb": 2,
-    "id": "9c6b396d",
+   
     "inCart": 0
   },
   {
@@ -378,7 +379,7 @@ const products = [ {
     "shine": "nie",
     "size": "80x65",
     "bulb": "7",
-    "id": "e69d2aeb",
+   
     "metal": "on",
     "inCart": 0
   },
@@ -397,7 +398,7 @@ const products = [ {
     "shine": "false",
     "size": "80x65",
     "bulb": "7",
-    "id": "437925ac",
+
     "inCart": 0
   },
   {
@@ -415,7 +416,7 @@ const products = [ {
     "shine": "false",
     "size": "45x20",
     "bulb": "1",
-    "id": "11085dbb",
+   
     "inCart": 0
   },
   {
@@ -433,7 +434,7 @@ const products = [ {
     "shine": "false",
     "size": "45x20",
     "bulb": "1",
-    "id": "e87a7cc4",
+    
     "inCart": 0
   },
   {
@@ -452,7 +453,7 @@ const products = [ {
     "shine": "false",
     "size": "80x90",
     "bulb": "2",
-    "id": "b4f9e5fc",
+    
     "inCart": 0
   },
   {
@@ -471,7 +472,7 @@ const products = [ {
     "shine": "false",
     "size": "45x25",
     "bulb": 2,
-    "id": "5cfa55c5",
+    
     "inCart": 0
   },
   {
@@ -490,7 +491,7 @@ const products = [ {
     "shine": "false",
     "size": "45x25",
     "bulb": 2,
-    "id": "85b56bb2",
+   
     "inCart": 0
   },
   {
@@ -509,7 +510,7 @@ const products = [ {
     "shine": "false",
     "size": "55x25",
     "bulb": 3,
-    "id": "a203dbf5",
+ 
     "inCart": 0
   },
   {
@@ -527,7 +528,7 @@ const products = [ {
     "shine": "false",
     "size": "55x25",
     "bulb": 3,
-    "id": "1948143a",
+    
     "inCart": 0
   },
   {
@@ -546,7 +547,7 @@ const products = [ {
     "shine": "false",
     "size": "60x25",
     "bulb": 4,
-    "id": "2a80e30e",
+    
     "inCart": 0
   },
   {
@@ -564,7 +565,7 @@ const products = [ {
     "shine": "false",
     "size": "60x25",
     "bulb": 4,
-    "id": "53d316ec",
+   
     "inCart": 0
   },
   {
@@ -582,7 +583,7 @@ const products = [ {
     "shine": "false",
     "size": "60x25",
     "bulb": 4,
-    "id": "abdc2607",
+    
     "inCart": 0
   },
   {
@@ -601,7 +602,7 @@ const products = [ {
     "shine": "false",
     "size": "45x50",
     "bulb": "2",
-    "id": "d12de1f8"
+    "inCart": 0
   },
   {
     "title": "Magnus",
@@ -619,7 +620,7 @@ const products = [ {
     "shine": "false",
     "size": "30x20",
     "bulb": 2,
-    "id": "9c6b396d",
+    
     "inCart": 0
   },
   {
@@ -636,7 +637,7 @@ const products = [ {
     "shine": "nie",
     "size": "80x65",
     "bulb": "7",
-    "id": "e69d2aeb",
+    
     "metal": "on",
     "inCart": 0
   },
@@ -655,7 +656,7 @@ const products = [ {
     "shine": "false",
     "size": "80x65",
     "bulb": "7",
-    "id": "437925ac",
+   
     "inCart": 0
   },
   {
@@ -673,7 +674,7 @@ const products = [ {
     "shine": "false",
     "size": "45x20",
     "bulb": "1",
-    "id": "11085dbb",
+    
     "inCart": 0
   },
   {
@@ -691,7 +692,7 @@ const products = [ {
     "shine": "false",
     "size": "45x20",
     "bulb": "1",
-    "id": "e87a7cc4",
+   
     "inCart": 0
   },
   {
@@ -710,7 +711,7 @@ const products = [ {
     "shine": "false",
     "size": "80x90",
     "bulb": "2",
-    "id": "b4f9e5fc",
+   
     "inCart": 0
   },
   {
@@ -729,7 +730,7 @@ const products = [ {
     "shine": "false",
     "size": "45x25",
     "bulb": 2,
-    "id": "5cfa55c5",
+   
     "inCart": 0
   },
   {
@@ -748,7 +749,7 @@ const products = [ {
     "shine": "false",
     "size": "45x25",
     "bulb": 2,
-    "id": "85b56bb2",
+    
     "inCart": 0
   },
   {
@@ -767,7 +768,7 @@ const products = [ {
     "shine": "false",
     "size": "55x25",
     "bulb": 3,
-    "id": "a203dbf5",
+    
     "inCart": 0
   },
   {
@@ -785,7 +786,7 @@ const products = [ {
     "shine": "false",
     "size": "55x25",
     "bulb": 3,
-    "id": "1948143a",
+    
     "inCart": 0
   },
   {
@@ -804,7 +805,7 @@ const products = [ {
     "shine": "false",
     "size": "60x25",
     "bulb": 4,
-    "id": "2a80e30e",
+  
     "inCart": 0
   },
   {
@@ -822,7 +823,7 @@ const products = [ {
     "shine": "false",
     "size": "60x25",
     "bulb": 4,
-    "id": "53d316ec",
+  
     "inCart": 0
   },
   {
@@ -840,7 +841,7 @@ const products = [ {
     "shine": "false",
     "size": "60x25",
     "bulb": 4,
-    "id": "abdc2607",
+    
     "inCart": 0
   },
   {
@@ -859,7 +860,7 @@ const products = [ {
     "shine": "false",
     "size": "45x50",
     "bulb": "2",
-    "id": "d12de1f8",
+    
     "inCart": 0
   },
   {
@@ -877,7 +878,7 @@ const products = [ {
     "shine": "false",
     "size": "30x20",
     "bulb": 2,
-    "id": "9c6b3955",
+    
     "inCart": 0
   },
   {
@@ -895,7 +896,7 @@ const products = [ {
     "shine": "false",
     "size": "30x20",
     "bulb": 3,
-    "id": "9c6b396d",
+    
     "inCart": 0
   },
   {
@@ -913,7 +914,7 @@ const products = [ {
     "shine": "false",
     "size": "30x20",
     "bulb": 3,
-    "id": "9c6b396d",
+  
     "inCart": 0
   },
   {
@@ -931,7 +932,7 @@ const products = [ {
     "shine": "false",
     "size": "30x20",
     "bulb": 3,
-    "id": "9c6b396d",
+    
     "inCart": 0
   },
   {
@@ -949,7 +950,7 @@ const products = [ {
     "shine": "false",
     "size": "30x20",
     "bulb": 2,
-    "id": "9c6b3955",
+    
     "inCart": 0
   },
   {
@@ -967,7 +968,7 @@ const products = [ {
     "shine": "false",
     "size": "30x20",
     "bulb": 3,
-    "id": "9c6b396d",
+   
     "inCart": 0
   },
   {
@@ -985,7 +986,7 @@ const products = [ {
     "shine": "false",
     "size": "30x20",
     "bulb": 3,
-    "id": "9c6b396d",
+    
     "inCart": 0
   },
   {
@@ -1003,7 +1004,7 @@ const products = [ {
     "shine": "false",
     "size": "30x20",
     "bulb": 3,
-    "id": "9c6b396d",
+   
     "inCart": 0
   },
   {
@@ -1021,7 +1022,7 @@ const products = [ {
     "shine": "false",
     "size": "30x20",
     "bulb": 3,
-    "id": "9c6b396d",
+   
     "inCart": 0
   },
   {
@@ -1039,7 +1040,7 @@ const products = [ {
       "shine": "false",
       "size": "30x20",
       "bulb": 3,
-      "id": "9c6b396d",
+   
       "inCart": 0
     },
     {
@@ -1057,7 +1058,7 @@ const products = [ {
         "shine": "false",
         "size": "30x20",
         "bulb": 3,
-        "id": "9c6b396d",
+      
         "inCart": 0
       },
       {
@@ -1075,7 +1076,7 @@ const products = [ {
           "shine": "false",
           "size": "30x20",
           "bulb": 3,
-          "id": "9c6b396d",
+        
           "inCart": 0
         },
         {
@@ -1093,7 +1094,7 @@ const products = [ {
             "shine": "false",
             "size": "30x20",
             "bulb": 3,
-            "id": "9c6b396d",
+         
             "inCart": 0
           },
           {
@@ -1111,7 +1112,7 @@ const products = [ {
               "shine": "false",
               "size": "30x20",
               "bulb": 3,
-              "id": "9c6b396d",
+            
               "inCart": 0
             },
             {
@@ -1130,7 +1131,7 @@ const products = [ {
                 "shine": "false",
                 "size": "30x20",
                 "bulb": 3,
-                "id": "9c6b396d",
+              
                 "inCart": 0
               },
             {
@@ -1149,7 +1150,7 @@ const products = [ {
                 "shine": "false",
                 "size": "30x20",
                 "bulb": 3,
-                "id": "9c6b396d",
+              
                 "inCart": 0
               },
             {
@@ -1168,7 +1169,7 @@ const products = [ {
                 "shine": "false",
                 "size": "30x20",
                 "bulb": 3,
-                "id": "9c6b396d",
+                
                 "inCart": 0
               },
             {
@@ -1187,7 +1188,7 @@ const products = [ {
                 "shine": "false",
                 "size": "30x20",
                 "bulb": 3,
-                "id": "9c6b396d",
+              
                 "inCart": 0
               },
             {
@@ -1206,7 +1207,7 @@ const products = [ {
                 "shine": "false",
                 "size": "30x20",
                 "bulb": 3,
-                "id": "9c6b396d",
+             
                 "inCart": 0
               },
             {
@@ -1225,7 +1226,7 @@ const products = [ {
                 "shine": "false",
                 "size": "30x20",
                 "bulb": 3,
-                "id": "9c6b396d",
+              
                 "inCart": 0
               },
             {
@@ -1244,7 +1245,7 @@ const products = [ {
                 "shine": "false",
                 "size": "30x20",
                 "bulb": 3,
-                "id": "9c6b396d",
+                
                 "inCart": 0
               },
 ]

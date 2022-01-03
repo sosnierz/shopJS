@@ -24,31 +24,38 @@ div#cart.container {
 }
 
 #cart .cart-item h3 {
-    margin: 0;
-    width: 260px;
+    font-size: 20px;
+    float: left;
+    display: flex;
+    flex-grow: 1;
+}
+
+.subtitle {
+    margin-left: 40px;
 }
 
 .cart-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
 
-.cart-right .field {
-    margin-bottom: 0 !important;
+.cart-left {
+    flex-grow: 1;
+
 }
+
+
 
 .changeQuantity {
-    margin-left: 10px;
-}
-
-.changeQuantity span {
-    font-size: 17px;
+    margin-left: 20px;
 }
 
 .numQ {
-    margin: 0 10px;
+    margin: 0 10px 0 20px;
     line-height: 33px;
+    width: 30px;
 
 }
 
@@ -62,8 +69,8 @@ div#cart.container {
     align-items: center;
 }
 
-.cart-right form {
-    display: inline;
+.cart-right {
+    margin-left: 30px;
 }
 
 .total.message.is-info,

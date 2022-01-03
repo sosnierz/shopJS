@@ -14,13 +14,12 @@ const btn_next= document.querySelector('.page-link.next');
 function renderProducts() {
   products.forEach((product) => {
     images.innerHTML +=`
-<div data-price=${product.price} class="image shopProduct ${product.category} ${product.fabric.join(' ')} ${product.bulb} " > 
-<input type="hidden"  value="${product.inCart}">
+<div class="image shopProduct ${product.category} ${product.fabric.join(' ')} ${product.bulb} " > 
 <img class="productImg" src=" ${product.image}" alt="${product.title}"/>
 <h3 class="subtitle">${product.title} <br>${product.model}</h3>
 <h5 class="priceProduct">${product.price.toFixed(2)} zł</h5>
 <div class="details">
-<button class="button has-icon is-inverted addToCart" data-product-id=${product.id}>Dodaj do <i
+<button class="button has-icon is-inverted addToCart" d>Dodaj do <i
 class="fa fa-shopping-cart"></i></button>
 <button class="button has-icon is-inverted">Więcej...</button>
  </div>
@@ -272,3 +271,6 @@ selectResult.addEventListener("change", function() {
 
 
 // add class show to products cart
+
+
+
