@@ -23,16 +23,10 @@ div#cart.container {
     padding: 15px;
 }
 
-#cart .cart-item h3 {
-    font-size: 20px;
-    float: left;
-    display: flex;
-    flex-grow: 1;
-}
 
-.subtitle {
-    margin-left: 40px;
-}
+
+
+
 
 .cart-item {
     display: flex;

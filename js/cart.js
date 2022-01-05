@@ -15,7 +15,7 @@ window.onload = function(){
                     id:i+1,
                     name:e.target.parentElement.parentElement.children[1].textContent,
                     price:e.target.parentElement.parentElement.children[2].textContent,
-                    inCart:1
+                    no:1
 					};
 				if(JSON.parse(localStorage.getItem('items')) === null){
 					items.push(item);
@@ -58,19 +58,16 @@ window.onload = function(){
 	}else{
 		JSON.parse(localStorage.getItem('items')).map(data=>{
             const price = parseInt(data.price);
-            const total = price*data.inCart;
-           
+            const total = price*data.no;
+			
              
 			tableData += `
-            <div class="cart-item message">
-            <div class="cart-left">
-                <h3>ID: ${data.id} </h3>
+            <div data-id =${data.id} class="cart-item message">    
                 <h3 class="subtitle">${data.name}</h3>
-                </div>
-                <div class="cart-right">
+              <div class="cart-right">
                     <div class="priceItem"><span> ${price.toFixed(2)} </span></div>
                 <div class="changeQuantity">                
-                    <input class="numQ" value='${data.inCart}'></input>
+                    <input class="numQ" value='${data.no}'></input>
                 </div>
                 </div>
             <div class="price is-size-4">
@@ -78,16 +75,37 @@ window.onload = function(){
             </div>
            <div class="remove">
             <button class="button is-danger delete" onclick="deleteItem(this)"><span class="icon is-small"><i class="fas fa-times"></i></span></button>
-                              
+			            
         </div>
             </div>
+		
            	  `;
                  
 		});
 	}
 	cardBoxTable.innerHTML = tableData;
+	}
 
-}
+function deleteItem(e) {
+
+	let items = [];
+	JSON.parse(localStorage.getItem('items')).map(data => {
+		if (data.id != e.parentElement.parentElement.getAttribute('data-id')) {
+
+			items.push(data);
+
+		}
+	});
+	localStorage.setItem('items', JSON.stringify(items));
+	window.location.reload();
+};
+
+
+const btnClear = document.querySelector('.buy');
+btnClear.addEventListener('click',function(){  
+localStorage.clear();
+location.reload();
+alert('Dziekujemy za zakupy !!!') });
 
 
 
